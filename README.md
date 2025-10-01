@@ -19,11 +19,10 @@ conda create -n petface python=3.10 -y && conda activate petface
 pip install -r requirements.txt
 
 # 2) sanity check your dataset structure/annotations
-python scripts/benchmark_petface.py --root /path/to/PetFace --ann /path/to/annotations.csv
+python scripts/benchmark_petface.py --root data/val --ann annotations_noheader.csv
 
 # 3) train (coordinate regression)
-python train_landmark.py   --cfg configs/default.yaml   --data.root /path/to/PetFace   --data.ann /path/to/annotations.csv
-
+python train_landmark.py --cfg configs/default.yaml --data.root data/val/ --data.ann annotations_noheader.csv 
 # 4) generate a PCA heatmap for a single image
 python scripts/dino_pca_heatmap.py --image /path/to/img.jpg --out out_heatmap.jpg
 ```
