@@ -1,6 +1,6 @@
 # PetFace + DINO Landmark Estimation (MVP)
 
-This scaffold gives you a **minimal, reproducible** pipeline to:
+pipeline to:
 - load PetFace-style landmark data,
 - train a **DINO-backed** landmark regressor,
 - generate **PCA heatmaps** from DINO features,
