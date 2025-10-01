@@ -1,0 +1,18 @@
+data:
+  root: data/val
+  ann: annotations_noheader.csv     # CSV path (ignored if coco_json provided)
+  coco_json: null                   # e.g., /path/to/petface_keypoints.json
+  input_size: 224
+  crop: true
+
+model:
+  backbone: vit_small_patch16_224.dino
+  num_landmarks: 5                  # set to your dataset's K
+  use_cls: true                     # use CLS token; false => mean pool
+
+train:
+  epochs: 30
+  batch_size: 32
+  lr: 2.0e-4
+  wd: 0.01
+  workers: 4
